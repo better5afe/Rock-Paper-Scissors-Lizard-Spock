@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { select } from '../store/actions/select-actions';
+import { SelectedGame } from '../models/interfaces';
 import Button from './reusable/Button';
 
 import './SelectGame.scss';
@@ -16,7 +17,7 @@ const SelectGame = () => {
 		<div className='select-box'>
 			<Button
 				text='Standard Game'
-				value='standard'
+				value={SelectedGame.STANDARD}
 				onClick={selectGameHandler}
 			/>
 			<Button

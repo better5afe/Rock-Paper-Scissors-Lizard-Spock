@@ -20,10 +20,11 @@
 		border-color: colors.$white;
 	}
 
-	&--rules {
+	&--rules,
+	&--return {
 		display: block;
 		padding: 0.5em 2em;
-		margin: 0 auto;
+		margin: 1em auto;
 	}
 
 	&:hover,
@@ -55,7 +56,8 @@
 		font-size: 2rem;
 
 		&--play-again,
-		&--rules {
+		&--rules,
+		&--return {
 			margin: 0;
 		}
 	}
@@ -63,9 +65,9 @@
 
 @media (min-width: 992px) {
 	.button {
-		&--rules {
+		&--rules,
+		&--return {
 			position: fixed;
-			right: 30px;
 			bottom: 20px;
 			transform: translateX(0);
 
@@ -73,6 +75,14 @@
 			&:focus {
 				transform: scale(1.1);
 			}
+		}
+
+		&--rules {
+			right: 30px;
+		}
+
+		&--return {
+			left: 30px;
 		}
 	}
 }

@@ -6,11 +6,12 @@ import { useSelector } from 'react-redux';
 import { StateInterface } from './models/interfaces';
 
 const App = () => {
+	const selectedGame = useSelector((state: StateInterface) => state.select);
 	const modal = useSelector((state: StateInterface) => state.modal);
 
 	return (
 		<>
-			<Game />
+			{selectedGame === '' ? <SelectGame /> : <Game />}
 			{!modal
 				? ''
 				: ReactDOM.createPortal(

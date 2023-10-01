@@ -1,7 +1,7 @@
 import { SELECT, RESET } from '../actions/select-actions';
 import { ActionInterface } from '../../models/interfaces';
 
-const initialState = 'advanced';
+const initialState = '';
 
 export const selectGameReducer = (
 	state = initialState,
