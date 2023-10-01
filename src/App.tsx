@@ -1,5 +1,7 @@
-const App = () => {
-    return <div></div>
-}
+import SelectGame from './components/SelectGame';
 
-export default App
+const App = () => {
+	return <SelectGame />;
+};
+
+export default App;

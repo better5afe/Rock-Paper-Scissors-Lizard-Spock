@@ -1,0 +1,44 @@
+@use '../../assets/colors.scss';
+
+.button {
+	padding: 0.5em 1em;
+	margin: 0.8em 0;
+	background: transparent;
+	border: 1px solid colors.$white;
+	border-radius: 1rem;
+	outline: none;
+	font-size: 1.8rem;
+	color: colors.$white;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s, transform .3s;
+
+	&:hover,
+	&:focus,
+	&--play-again {
+		background: colors.$white;
+		color: colors.$dark-text;
+	}
+
+	&--play-again:hover,
+	&--play-again:focus {
+		background: transparent;
+		color: colors.$white;
+	}
+
+	&:hover,
+	&:focus,
+	&--play-again:hover,
+	&--play-again:focus {
+		transform: scale(1.1);
+	}
+}
+
+@media (min-width: 768px) {
+	.button {
+		margin: 0 1em;
+		font-size: 2rem;
+	}
+}
