@@ -27,9 +27,11 @@ $spock-gradient: linear-gradient(
 
 // background
 $bg-gradient: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+$bg-modal: hsla(236, 47%, 6%, 0.8);
+
 
 // neutral
 $dark-text: hsl(229, 25%, 31%);
 $white: hsl(0, 0%, 100%);
 $score-text: hsl(229, 64%, 46%);
-$header-outline: hsl(217, 16%, 45%);
+$light-gray: hsl(217, 16%, 45%);

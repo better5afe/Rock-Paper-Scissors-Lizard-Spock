@@ -4,28 +4,36 @@
 	padding: 0.5em 1em;
 	margin: 0.8em 0;
 	background: transparent;
-	border: 1px solid colors.$white;
+	border: 2px solid colors.$light-gray;
 	border-radius: 1rem;
 	outline: none;
 	font-size: 1.8rem;
 	color: colors.$white;
 	text-transform: uppercase;
-	letter-spacing: 1.5px;
+	letter-spacing: 2px;
 	font-weight: 600;
 	cursor: pointer;
-	transition: background-color 0.3s, color 0.3s, transform .3s;
+	transition: background-color 0.3s, color 0.3s, border-color 0.3s,
+		transform 0.3s;
+
+	&--play-again {
+		border-color: colors.$white;
+	}
+
+	&--rules {
+		position: fixed;
+		bottom: 20px;
+		right: 50%;
+		transform: translateX(50%);
+		padding: 0.5em 2em;
+	}
 
 	&:hover,
 	&:focus,
 	&--play-again {
-		background: colors.$white;
+		background-color: colors.$white;
+		border-color: colors.$white;
 		color: colors.$dark-text;
-	}
-
-	&--play-again:hover,
-	&--play-again:focus {
-		background: transparent;
-		color: colors.$white;
 	}
 
 	&:hover,
@@ -34,11 +42,42 @@
 	&--play-again:focus {
 		transform: scale(1.1);
 	}
+
+	&--play-again:hover,
+	&--play-again:focus {
+		background: transparent;
+		color: colors.$white;
+		border-color: colors.$light-gray;
+	}
+
+	&--rules:hover,
+	&--rules:focus {
+		transform: scale(1.1) translateX(50%);
+	}
 }
 
 @media (min-width: 768px) {
 	.button {
 		margin: 0 1em;
 		font-size: 2rem;
+
+		&--play-again,
+		&--rules {
+			margin: 0;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.button {
+		&--rules {
+			right: 30px;
+			transform: translateX(0);
+
+			&:hover,
+			&:focus {
+				transform: scale(1.1);
+			}
+		}
 	}
 }

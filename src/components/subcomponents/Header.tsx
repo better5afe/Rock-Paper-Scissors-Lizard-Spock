@@ -11,11 +11,11 @@ const Header = () => {
 	return (
 		<header className='header'>
 			<div className='header__info'>
-				{selectedGame === 'standard' ? <StandardLogo  className='header__info-icon'/> : <AdvancedLogo className='header__info-icon' />}
+				{selectedGame === 'standard' ? <StandardLogo /> : <AdvancedLogo />}
 			</div>
 			<div className='header__score'>
 				<p className='header__score-title'>Score</p>
-				<p className='header__score-points'>14</p>
+				<p className='header__score-points'>114</p>
 			</div>
 		</header>
 	);

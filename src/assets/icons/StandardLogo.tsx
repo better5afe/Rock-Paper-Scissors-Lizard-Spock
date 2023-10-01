@@ -1,9 +1,6 @@
-import { SvgProps } from '../../models/interfaces';
-
-const StandardLogo: React.FC<SvgProps> = ({ className }) => {
+const StandardLogo = () => {
 	return (
-        <svg
-            className={className}
+		<svg
 			xmlns='http://www.w3.org/2000/svg'
 			xmlnsXlink='http://www.w3.org/1999/xlink'
 			width='162'

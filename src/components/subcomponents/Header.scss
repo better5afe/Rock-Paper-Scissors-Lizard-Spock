@@ -5,9 +5,9 @@
 	justify-content: space-between;
 	align-items: center;
 	max-width: 900px;
-	padding: 2em;
+	padding: 1.5em;
 	margin: 0 auto;
-	border: 3px solid colors.$header-outline;
+	border: 3px solid colors.$light-gray;
 	border-radius: 1rem;
 
 	&__score {

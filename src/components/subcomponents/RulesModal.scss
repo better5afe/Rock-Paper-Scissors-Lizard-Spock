@@ -1,0 +1,79 @@
+@use '../../assets/colors.scss';
+
+.rules {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		background-color: colors.$white;
+
+		&-title {
+			font-size: 3rem;
+			color: colors.$dark-text;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+
+		&-icon {
+			margin: 5em 0;
+		}
+
+		&-btn {
+			background: transparent;
+			border: none;
+			outline: none;
+			cursor: pointer;
+
+			svg path {
+				transition: fill 0.3s, opacity 0.3s;
+			}
+
+			&:hover,
+			&:focus {
+				svg path {
+					fill: colors.$dark-text;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.rules {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: colors.$bg-modal;
+        
+		&__container {
+			position: relative;
+			display: block;
+			width: 500px;
+			padding: 3em 2em;
+			margin: 0 auto;
+			height: auto;
+			background-color: colors.$white;
+			border-radius: 1rem;
+
+			&-icon {
+				display: block;
+				margin: 1em auto 0;
+			}
+
+			&-btn {
+				position: absolute;
+				top: 2.8em;
+				right: 2em;
+			}
+		}
+	}
+}

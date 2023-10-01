@@ -12,6 +12,7 @@ export interface ActionInterface {
 
 export interface StateInterface {
 	select: string;
+	modal: boolean;
 }
 
 export interface SvgProps {

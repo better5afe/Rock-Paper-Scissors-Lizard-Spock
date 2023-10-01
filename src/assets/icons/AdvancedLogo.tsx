@@ -1,9 +1,6 @@
-import { SvgProps } from '../../models/interfaces';
-
-const AdvancedLogo: React.FC<SvgProps> = ({ className }) => {
+const AdvancedLogo = () => {
 	return (
 		<svg
-			className={className}
 			xmlns='http://www.w3.org/2000/svg'
 			xmlnsXlink='http://www.w3.org/1999/xlink'
 			width='115'
