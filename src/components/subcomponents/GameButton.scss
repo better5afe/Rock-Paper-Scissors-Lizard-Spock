@@ -192,10 +192,6 @@
 
 		&--scissors {
 			right: 50px;
-			&:hover,
-			&:focus {
-				transform: translateX(-50%) scale(1.15);
-			}
 		}
 
 		&-inside {
@@ -238,6 +234,10 @@
 
 			&--scissors {
 				top: -50px;
+				&:hover,
+				&:focus {
+					transform: translateX(-50%) scale(1.15);
+				}
 			}
 
 			&--lizard {
