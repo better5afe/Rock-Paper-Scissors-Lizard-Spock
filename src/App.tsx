@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom';
 import SelectGame from './components/SelectGame';
 import Game from './components/Game';
 import RulesModal from './components/subcomponents/RulesModal';
@@ -10,7 +11,12 @@ const App = () => {
 	return (
 		<>
 			<Game />
-			{!modal ? '' : <RulesModal />}
+			{!modal
+				? ''
+				: ReactDOM.createPortal(
+						<RulesModal />,
+						document.getElementById('modal')!
+				  )}
 		</>
 	);
 };
