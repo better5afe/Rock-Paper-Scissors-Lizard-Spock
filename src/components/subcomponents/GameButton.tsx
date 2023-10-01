@@ -4,14 +4,15 @@ import './GameButton.scss';
 const GameButton: React.FC<GameButtonProps> = ({
 	figure,
 	isAdvanced,
+	className,
 	onClick,
 }) => {
 	return (
 		<button
 			className={
 				isAdvanced
-					? `game__btn game__btn--${figure} game__btn--advanced game__btn--advanced--${figure}`
-					: `game__btn game__btn--${figure}`
+					? `game__btn game__btn--${figure} game__btn--advanced game__btn--advanced--${figure} ${className}`
+					: `game__btn game__btn--${figure} ${className}`
 			}
 			onClick={onClick}
 		>

@@ -156,6 +156,25 @@
 	}
 }
 
+.preview {
+	position: static;
+	transform: none;
+
+	&:hover,
+	&:focus {
+		transform: none;
+	}
+}
+
+.empty {
+	background: colors.$empty-btn;
+
+	.game__btn-inside {
+		background: colors.$empty-btn;
+		box-shadow: none;
+	}
+}
+
 @media (min-width: 375px) {
 	.game__btn {
 		&--scissors {
@@ -165,6 +184,19 @@
 			&--paper {
 				left: 239px;
 			}
+		}
+	}
+
+	.empty {
+	}
+
+	.preview {
+		position: static;
+		transform: none;
+
+		&:hover,
+		&:focus {
+			transform: none;
 		}
 	}
 }
@@ -257,6 +289,16 @@
 					width: 45px;
 				}
 			}
+		}
+	}
+
+	.preview {
+		position: static;
+		transform: none;
+
+		&:hover,
+		&:focus {
+			transform: none;
 		}
 	}
 }

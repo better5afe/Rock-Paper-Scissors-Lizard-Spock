@@ -7,9 +7,11 @@ export interface ButtonProps {
 
 export interface GameButtonProps {
 	figure: string;
-	value: number;
+	value?: number;
+	className?: string;
 	isAdvanced?: boolean;
-	onClick: () => void;
+	disabled?: boolean;
+	onClick?: () => void;
 }
 
 export interface SvgProps {
