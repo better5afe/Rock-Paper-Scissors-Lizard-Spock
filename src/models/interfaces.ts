@@ -9,6 +9,7 @@ export interface GameButtonProps {
 	figure: string;
 	value: number;
 	isAdvanced?: boolean;
+	onClick: () => void;
 }
 
 export interface ActionInterface {
@@ -19,6 +20,7 @@ export interface ActionInterface {
 export interface StateInterface {
 	select: string;
 	modal: boolean;
+	figure: string;
 }
 
 export interface SvgProps {

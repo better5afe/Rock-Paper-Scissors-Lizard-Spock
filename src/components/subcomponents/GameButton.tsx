@@ -1,7 +1,11 @@
 import { GameButtonProps } from '../../models/interfaces';
 import './GameButton.scss';
 
-const GameButton: React.FC<GameButtonProps> = ({ figure, isAdvanced }) => {
+const GameButton: React.FC<GameButtonProps> = ({
+	figure,
+	isAdvanced,
+	onClick,
+}) => {
 	return (
 		<button
 			className={
@@ -9,6 +13,7 @@ const GameButton: React.FC<GameButtonProps> = ({ figure, isAdvanced }) => {
 					? `game__btn game__btn--${figure} game__btn--advanced game__btn--advanced--${figure}`
 					: `game__btn game__btn--${figure}`
 			}
+			onClick={onClick}
 		>
 			<div className='game__btn-inside'>
 				<div

@@ -9,6 +9,7 @@
 	margin: 0 auto;
 	border: 3px solid colors.$light-gray;
 	border-radius: 1rem;
+z-index: 0;
 
 	&__score {
 		width: fit-content;

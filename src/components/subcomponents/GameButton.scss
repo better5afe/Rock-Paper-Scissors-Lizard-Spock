@@ -13,12 +13,22 @@
 	cursor: pointer;
 	transition: transform 0.3s;
 
+	&:hover,
+	&:focus {
+		transform: scale(1.05);
+	}
+
 	&--rock {
 		bottom: 0;
 		right: 50%;
 		transform: translateX(50%);
 		background: colors.$rock-gradient;
 		box-shadow: 0px 7px 0px 0px colors.$rock-shadow;
+
+		&:hover,
+		&:focus {
+			transform: translateX(50%) scale(1.05);
+		}
 	}
 
 	&--paper {
@@ -94,6 +104,11 @@
 		&--rock {
 			right: 20px;
 			transform: translateX(0);
+
+			&:hover,
+			&:focus {
+				transform: translateX(0) scale(1.05);
+			}
 		}
 
 		&--rock,
@@ -114,6 +129,11 @@
 			top: -25px;
 			left: 50%;
 			transform: translateX(-50%);
+
+			&:hover,
+			&:focus {
+				transform: translateX(-50%) scale(1.05);
+			}
 		}
 
 		&--lizard {
@@ -154,12 +174,28 @@
 		height: 150px;
 		width: 150px;
 
+		&:hover,
+		&:focus {
+			transform: scale(1.15);
+		}
+
+		&--rock {
+			&:hover,
+			&:focus {
+				transform: translateX(50%) scale(1.15);
+			}
+		}
+
 		&--paper {
 			left: 50px;
 		}
 
 		&--scissors {
 			right: 50px;
+			&:hover,
+			&:focus {
+				transform: translateX(-50%) scale(1.15);
+			}
 		}
 
 		&-inside {
@@ -179,6 +215,11 @@
 			&--rock {
 				right: 70px;
 				transform: translateX(0);
+
+				&:hover,
+				&:focus {
+					transform: translateX(0) scale(1.15);
+				}
 			}
 
 			&--rock,
