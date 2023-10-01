@@ -1,0 +1,83 @@
+@use '../../assets/colors.scss';
+
+.game__btn {
+	height: 100px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: transform 0.3s;
+
+	&--rock {
+		background: colors.$rock-gradient;
+		box-shadow: 0px 7px 0px 0px colors.$rock-shadow;
+	}
+
+	&--paper {
+		background: colors.$paper-gradient;
+		box-shadow: 0px 7px 0px 0px colors.$paper-shadow;
+	}
+
+	&--scissors {
+		background: colors.$scissors-gradient;
+		box-shadow: 0px 7px 0px 0px colors.$scissors-shadow;
+	}
+
+	&--lizard {
+		background: colors.$lizard-gradient;
+		box-shadow: 0px 7px 0px 0px colors.$lizard-shadow;
+	}
+
+	&--spock {
+		background: colors.$spock-gradient;
+		box-shadow: 0px 7px 0px 0px colors.$spock-shadow;
+	}
+
+	&:hover,
+	&:focus {
+		transform: scale(1.1);
+	}
+
+	&-inside {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 75px;
+		height: 75px;
+		background-color: colors.$white;
+		border-radius: 50%;
+		box-shadow: inset 0px 5px 0px 0px colors.$light-shadow;
+
+		&-figure {
+			height: 45px;
+			width: 45px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			&--rock {
+				background-image: url('../../assets/icons/icon-rock.svg');
+			}
+
+			&--paper {
+				background-image: url('../../assets/icons/icon-paper.svg');
+			}
+
+			&--scissors {
+				background-image: url('../../assets/icons/icon-scissors.svg');
+			}
+
+			&--lizard {
+				background-image: url('../../assets/icons/icon-lizard.svg');
+			}
+
+			&--spock {
+				background-image: url('../../assets/icons/icon-spock.svg');
+			}
+		}
+	}
+}

@@ -5,6 +5,10 @@ export interface ButtonProps {
 	onClick: (event: React.MouseEvent) => void;
 }
 
+export interface GameButtonProps {
+	figure: string;
+}
+
 export interface ActionInterface {
 	type: string;
 	payload?: string;

@@ -3,12 +3,15 @@
 	justify-content: center;
 	align-items: center;
 	height: 30vh;
-	width: 290px;
 	margin: 4em auto;
 	background-image: url('../../assets/icons/bg-triangle.svg');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
+
+	&--advanced {
+		background-image: url('../../assets/icons/bg-pentagon.svg');
+	}
 }
 
 @media (min-width: 768px) {
@@ -21,13 +24,9 @@
 	.board {
 		margin: 6em auto;
 		height: 50vh;
-		width: 530px;
-		background-size: cover;
-
+	
 		&--advanced {
-			height: 45vh;
-			background-size: cover;
-			width: 450px;
-		}
+			height: 50vh;
+				}
 	}
 }

@@ -1,37 +1,37 @@
-// primary
-$scissors-gradient: linear-gradient(
-	to right,
+$scissors-gradient: radial-gradient(
+	circle,
 	hsl(39, 89%, 49%),
 	hsl(40, 84%, 53%)
 );
-$paper-gradient: linear-gradient(
-	to right,
+$scissors-shadow: hsl(39, 89%, 38%);
+$paper-gradient: radial-gradient(
+	circle,
 	hsl(230, 89%, 62%),
 	hsl(230, 89%, 65%)
 );
-$rock-gradient: linear-gradient(
-	to right,
-	hsl(349, 71%, 52%),
-	hsl(349, 70%, 56%)
-);
-$lizard-gradient: linear-gradient(
-	to right,
+$paper-shadow: hsl(230, 54%, 46%);
+$rock-gradient: radial-gradient(circle, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+$rock-shadow: hsl(349, 67%, 37%);
+$lizard-gradient: radial-gradient(
+	circle,
 	hsl(261, 73%, 60%),
 	hsl(261, 72%, 63%)
 );
-$spock-gradient: linear-gradient(
-	to right,
+$lizard-shadow: hsl(261, 48%, 47%);
+$spock-gradient: radial-gradient(
+	circle,
 	hsl(189, 59%, 53%),
 	hsl(189, 58%, 57%)
 );
+$spock-shadow: hsl(189, 52%, 45%);
 
-// background
+
 $bg-gradient: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 $bg-modal: hsla(236, 47%, 6%, 0.8);
 
 
-// neutral
 $dark-text: hsl(229, 25%, 31%);
 $white: hsl(0, 0%, 100%);
+$light-shadow: hsl(0, 2%, 80%);
 $score-text: hsl(229, 64%, 46%);
 $light-gray: hsl(217, 16%, 45%);
