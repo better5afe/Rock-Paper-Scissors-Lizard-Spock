@@ -1,0 +1,44 @@
+@use '../../assets/colors.scss';
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 900px;
+	padding: 2em;
+	margin: 0 auto;
+	border: 3px solid colors.$header-outline;
+	border-radius: 1rem;
+
+	&__score {
+		width: fit-content;
+		padding: 0.8em 1.5em;
+		background: colors.$white;
+		border-radius: 0.5rem;
+		text-align: center;
+
+		&-title {
+			font-size: 1.3rem;
+			color: colors.$score-text;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+		}
+
+		&-points {
+			font-size: 4rem;
+			color: colors.$dark-text;
+			font-weight: 700;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+    .header {
+        padding: 1.5em;
+        &__score {
+            padding: 0.8em 2.5em;
+
+        }
+    }
+}

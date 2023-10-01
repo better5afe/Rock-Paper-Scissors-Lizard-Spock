@@ -3,7 +3,7 @@ import './Game.scss';
 
 const Game = () => {
 	return (
-		<main>
+		<main className='main'>
 			<Header />
 		</main>
 	);
