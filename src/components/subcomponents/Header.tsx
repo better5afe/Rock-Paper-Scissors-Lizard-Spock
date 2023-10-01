@@ -7,6 +7,7 @@ import './Header.scss';
 
 const Header = () => {
 	const selectedGame = useSelector((state: StateInterface) => state.select);
+	const points = useSelector((state: StateInterface) => state.points);
 
 	return (
 		<header className='header'>
@@ -15,7 +16,7 @@ const Header = () => {
 			</div>
 			<div className='header__score'>
 				<p className='header__score-title'>Score</p>
-				<p className='header__score-points'>114</p>
+				<p className='header__score-points'>{points}</p>
 			</div>
 		</header>
 	);

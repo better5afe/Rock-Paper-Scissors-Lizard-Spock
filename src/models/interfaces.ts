@@ -37,6 +37,7 @@ export interface StateInterface {
 	select: string;
 	modal: boolean;
 	figure: FigurePayload;
+	points: number;
 }
 
 export enum Figures {
@@ -58,4 +59,9 @@ export enum Values {
 export enum SelectedGame {
 	STANDARD = 'standard',
 	ADVANCED = 'advanced',
+}
+
+export interface ComputerResult {
+	figure: string;
+	value: number;
 }

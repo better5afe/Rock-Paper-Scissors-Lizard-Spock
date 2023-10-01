@@ -166,15 +166,6 @@
 	}
 }
 
-.empty {
-	background: colors.$empty-btn;
-
-	.game__btn-inside {
-		background: colors.$empty-btn;
-		box-shadow: none;
-	}
-}
-
 @media (min-width: 375px) {
 	.game__btn {
 		&--scissors {
@@ -187,12 +178,10 @@
 		}
 	}
 
-	.empty {
-	}
-
 	.preview {
 		position: static;
 		transform: none;
+		cursor: default;
 
 		&:hover,
 		&:focus {
