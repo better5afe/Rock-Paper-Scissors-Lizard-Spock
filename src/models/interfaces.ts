@@ -34,7 +34,7 @@ export interface FigureActionInterface {
 export interface StateInterface {
 	select: string;
 	modal: boolean;
-	figure: string;
+	figure: FigurePayload;
 }
 
 export enum Figures {
