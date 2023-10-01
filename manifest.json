@@ -1,0 +1,6 @@
+{
+  "short_name": "Rock Paper Scissors Lizard Spock Game",
+  "name": "Rock Paper Scissors Lizard Spock Game",
+  "start_url": ".",
+  "display": "standalone"
+}
