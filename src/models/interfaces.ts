@@ -1,5 +1,11 @@
 export interface ButtonProps {
 	text: string;
 	className?: string;
-	onClick: () => void;
+	value?: string;
+	onClick: (event: React.MouseEvent) => void;
+}
+
+export interface ActionInterface {
+	type: string;
+	payload?: string;
 }
