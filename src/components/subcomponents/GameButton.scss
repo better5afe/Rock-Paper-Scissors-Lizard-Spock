@@ -1,8 +1,9 @@
 @use '../../assets/colors.scss';
 
 .game__btn {
-	height: 100px;
-	width: 100px;
+	position: absolute;
+	height: 110px;
+	width: 110px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -13,16 +14,26 @@
 	transition: transform 0.3s;
 
 	&--rock {
+		bottom: 0;
+		right: 50%;
+		transform: translateX(50%);
 		background: colors.$rock-gradient;
 		box-shadow: 0px 7px 0px 0px colors.$rock-shadow;
 	}
 
 	&--paper {
+		left: -10px;
 		background: colors.$paper-gradient;
 		box-shadow: 0px 7px 0px 0px colors.$paper-shadow;
 	}
 
+	&--paper,
 	&--scissors {
+		top: -25px;
+	}
+
+	&--scissors {
+		right: -5px;
 		background: colors.$scissors-gradient;
 		box-shadow: 0px 7px 0px 0px colors.$scissors-shadow;
 	}
@@ -37,24 +48,19 @@
 		box-shadow: 0px 7px 0px 0px colors.$spock-shadow;
 	}
 
-	&:hover,
-	&:focus {
-		transform: scale(1.1);
-	}
-
 	&-inside {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 75px;
-		height: 75px;
+		width: 85px;
+		height: 85px;
 		background-color: colors.$white;
 		border-radius: 50%;
 		box-shadow: inset 0px 5px 0px 0px colors.$light-shadow;
 
 		&-figure {
-			height: 45px;
-			width: 45px;
+			height: 55px;
+			width: 55px;
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center;
@@ -77,6 +83,138 @@
 
 			&--spock {
 				background-image: url('../../assets/icons/icon-spock.svg');
+			}
+		}
+	}
+
+	&--advanced {
+		height: 100px;
+		width: 100px;
+
+		&--rock {
+			right: 20px;
+			transform: translateX(0);
+		}
+
+		&--rock,
+		&--lizard {
+			bottom: -10px;
+		}
+
+		&--paper {
+			left: 205px;
+		}
+
+		&--paper,
+		&--spock {
+			top: 70px;
+		}
+
+		&--scissors {
+			top: -25px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		&--lizard {
+			left: 20px;
+		}
+
+		&--spock {
+			left: -10px;
+		}
+
+		.game__btn-inside {
+			width: 75px;
+			height: 75px;
+
+			&-figure {
+				height: 45px;
+				width: 45px;
+			}
+		}
+	}
+}
+
+@media (min-width: 375px) {
+	.game__btn {
+		&--scissors {
+			right: -10px;
+		}
+		&--advanced {
+			&--paper {
+				left: 239px;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.game__btn {
+		height: 150px;
+		width: 150px;
+
+		&--paper {
+			left: 50px;
+		}
+
+		&--scissors {
+			right: 50px;
+		}
+
+		&-inside {
+			width: 115px;
+			height: 115px;
+
+			&-figure {
+				height: 75px;
+				width: 75px;
+			}
+		}
+
+		&--advanced {
+			height: 140px;
+			width: 140px;
+
+			&--rock {
+				right: 70px;
+				transform: translateX(0);
+			}
+
+			&--rock,
+			&--lizard {
+				bottom: -75px;
+			}
+
+			&--paper {
+				left: 359px;
+			}
+
+			&--paper,
+			&--spock {
+				top: 60px;
+			}
+
+			&--scissors {
+				top: -50px;
+			}
+
+			&--lizard {
+				left: 70px;
+			}
+
+			&--spock {
+				left: 0px;
+			}
+
+			.game__btn-inside {
+				width: 95px;
+				height: 95px;
+
+				&-figure {
+					height: 45px;
+					width: 45px;
+				}
 			}
 		}
 	}

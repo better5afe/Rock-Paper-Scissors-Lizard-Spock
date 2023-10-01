@@ -21,11 +21,9 @@
 	}
 
 	&--rules {
-		position: fixed;
-		bottom: 20px;
-		right: 50%;
-		transform: translateX(50%);
+		display: block;
 		padding: 0.5em 2em;
+		margin: 0 auto;
 	}
 
 	&:hover,
@@ -49,11 +47,6 @@
 		color: colors.$white;
 		border-color: colors.$light-gray;
 	}
-
-	&--rules:hover,
-	&--rules:focus {
-		transform: scale(1.1) translateX(50%);
-	}
 }
 
 @media (min-width: 768px) {
@@ -71,7 +64,9 @@
 @media (min-width: 992px) {
 	.button {
 		&--rules {
+			position: fixed;
 			right: 30px;
+			bottom: 20px;
 			transform: translateX(0);
 
 			&:hover,
