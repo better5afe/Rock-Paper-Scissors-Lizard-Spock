@@ -1,16 +1,19 @@
 import { CHOOSE_FIGURE } from '../actions/figure-action';
-import { ActionInterface } from '../../models/interfaces';
+import { FigureActionInterface, FigurePayload } from '../../models/interfaces';
 
-const initialState = '';
+const initialState: FigurePayload = {
+	figure: '',
+	value: 0,
+};
 
 export const figureReducer = (
 	state = initialState,
-	action: ActionInterface
+	action: FigureActionInterface
 ) => {
 	switch (action.type) {
 		case CHOOSE_FIGURE:
-			return (state = action.payload!.toString());
+			return (state = action.payload!);
 		default:
-			return state
+			return state;
 	}
 };

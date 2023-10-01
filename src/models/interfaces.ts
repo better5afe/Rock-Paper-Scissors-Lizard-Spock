@@ -12,19 +12,29 @@ export interface GameButtonProps {
 	onClick: () => void;
 }
 
+export interface SvgProps {
+	className: string;
+}
+
 export interface ActionInterface {
 	type: string;
 	payload?: string;
+}
+
+export interface FigurePayload {
+	figure: string;
+	value: number;
+}
+
+export interface FigureActionInterface {
+	type: string;
+	payload: FigurePayload;
 }
 
 export interface StateInterface {
 	select: string;
 	modal: boolean;
 	figure: string;
-}
-
-export interface SvgProps {
-	className: string;
 }
 
 export enum Figures {

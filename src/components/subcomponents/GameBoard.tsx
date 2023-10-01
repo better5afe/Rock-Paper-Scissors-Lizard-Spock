@@ -1,7 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { StateInterface } from '../../models/interfaces';
 import { choseFigure } from '../../store/actions/figure-action';
-import { SelectedGame, Figures, Values } from '../../models/interfaces';
+import {
+	SelectedGame,
+	Figures,
+	Values,
+	FigurePayload,
+} from '../../models/interfaces';
 import GameButton from '../../components/subcomponents/GameButton';
 
 import './GameBoard.scss';
@@ -14,8 +19,8 @@ const GameBoard = () => {
 
 	const dispatch = useDispatch();
 
-	const chooseFigureHandler = (value: number) => {
-		dispatch(choseFigure(value));
+	const chooseFigureHandler = (payload: FigurePayload) => {
+		dispatch(choseFigure(payload));
 	};
 
 	return (
@@ -31,19 +36,28 @@ const GameBoard = () => {
 				figure={Figures.ROCK}
 				value={Values.ROCK}
 				isAdvanced={selectedGame === SelectedGame.ADVANCED && true}
-				onClick={() => chooseFigureHandler(Values.ROCK)}
+				onClick={() =>
+					chooseFigureHandler({ figure: Figures.ROCK, value: Values.ROCK })
+				}
 			/>
 			<GameButton
 				figure={Figures.PAPER}
 				value={Values.PAPER}
 				isAdvanced={selectedGame === SelectedGame.ADVANCED && true}
-				onClick={() => chooseFigureHandler(Values.PAPER)}
+				onClick={() =>
+					chooseFigureHandler({ figure: Figures.PAPER, value: Values.PAPER })
+				}
 			/>
 			<GameButton
 				figure={Figures.SCISSORS}
 				value={Values.SCISSORS}
 				isAdvanced={selectedGame === SelectedGame.ADVANCED && true}
-				onClick={() => chooseFigureHandler(Values.SCISSORS)}
+				onClick={() =>
+					chooseFigureHandler({
+						figure: Figures.SCISSORS,
+						value: Values.SCISSORS,
+					})
+				}
 			/>
 			{selectedGame === SelectedGame.ADVANCED ? (
 				<>
@@ -51,13 +65,23 @@ const GameBoard = () => {
 						figure={Figures.LIZARD}
 						value={Values.LIZARD}
 						isAdvanced={selectedGame === SelectedGame.ADVANCED && true}
-						onClick={() => chooseFigureHandler(Values.LIZARD)}
+						onClick={() =>
+							chooseFigureHandler({
+								figure: Figures.LIZARD,
+								value: Values.LIZARD,
+							})
+						}
 					/>
 					<GameButton
 						figure={Figures.SPOCK}
 						value={Values.SPOCK}
 						isAdvanced={selectedGame === SelectedGame.ADVANCED && true}
-						onClick={() => chooseFigureHandler(Values.SPOCK)}
+						onClick={() =>
+							chooseFigureHandler({
+								figure: Figures.SPOCK,
+								value: Values.SPOCK,
+							})
+						}
 					/>
 				</>
 			) : (
