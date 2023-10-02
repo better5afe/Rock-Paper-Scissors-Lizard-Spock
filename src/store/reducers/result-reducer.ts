@@ -8,7 +8,7 @@ export const resultReducer = (state = initialState, action: ActionInterface) => 
 		case SET_RESULT:
 			return (state = action.payload!);
 		case RESET_RESULT:
-			return (state = 's');
+			return (state = '');
 		default:
 			return state;
 	}

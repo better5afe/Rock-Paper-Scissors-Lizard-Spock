@@ -20,6 +20,7 @@ const GameBoard = () => {
 	const chosenFigure = useSelector(
 		(state: StateInterface) => state.figure.figure
 	);
+	const result = useSelector((state: StateInterface) => state.result);
 
 	const dispatch = useDispatch();
 
@@ -28,7 +29,7 @@ const GameBoard = () => {
 	};
 
 	return (
-		<div className='game-board'>
+		<div className={`game-board ${result !== '' && 'game-board--result'}`}>
 			{chosenFigure === '' ? (
 				<>
 					<img

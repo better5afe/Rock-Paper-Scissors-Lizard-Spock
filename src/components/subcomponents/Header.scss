@@ -9,7 +9,7 @@
 	margin: 0 auto;
 	border: 3px solid colors.$light-gray;
 	border-radius: 1rem;
-z-index: 0;
+	z-index: 0;
 
 	&__score {
 		width: fit-content;
@@ -35,11 +35,10 @@ z-index: 0;
 }
 
 @media (min-width: 992px) {
-    .header {
-        padding: 1.5em;
-        &__score {
-            padding: 0.8em 2.5em;
-
-        }
-    }
+	.header {
+		padding: 1.5em;
+		&__score {
+			padding: 0.8em 2.5em;
+		}
+	}
 }

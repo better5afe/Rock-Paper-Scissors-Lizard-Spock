@@ -17,6 +17,7 @@
 		transform 0.3s;
 
 	&--play-again {
+		padding: 0.5em 2.5em;
 		border-color: colors.$white;
 	}
 
@@ -58,7 +59,7 @@
 		&--play-again,
 		&--rules,
 		&--return {
-			margin: 0;
+			margin: 1em auto;
 		}
 	}
 }

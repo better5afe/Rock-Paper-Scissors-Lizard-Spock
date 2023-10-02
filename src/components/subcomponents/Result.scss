@@ -1,0 +1,23 @@
+@use '../../assets/colors.scss';
+
+.result {
+	order: 1;
+	width: 100%;
+	margin: 3em auto;
+	text-align: center;
+
+	&__text {
+		font-size: 4.5rem;
+		color: colors.$white;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+}
+
+@media (min-width: 992px) {
+	.result {
+		order: 0;
+		margin: 0;
+		width: fit-content;
+	}
+}

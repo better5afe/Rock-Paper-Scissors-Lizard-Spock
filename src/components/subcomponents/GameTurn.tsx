@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { StateInterface } from '../../models/interfaces';
+import { StateInterface, Result as Outcome } from '../../models/interfaces';
 import { setResult } from '../../store/actions/result-action';
 import { addPoint, deductPoint } from '../../store/actions/points-action';
 import GameButton from './GameButton';
+import Result from './Result';
 import { awaitResult, gameRules } from '../../utils/game-rules';
 
 import './GameTurn.scss';
 
 const GameTurn = () => {
 	const selectedGame = useSelector((state: StateInterface) => state.select);
+
+	const result = useSelector((state: StateInterface) => state.result);
 
 	const chosenFigure = useSelector((state: StateInterface) => state.figure);
 	const chosenFigureBeats = gameRules[chosenFigure.value - 1].beats as string[];
@@ -41,12 +44,12 @@ const GameTurn = () => {
 	useEffect(() => {
 		if (i === 10) {
 			if (chosenFigure.figure === computerFigure.figure) {
-				dispatch(setResult('draw'));
+				dispatch(setResult(Outcome.DRAW));
 			} else if (chosenFigureBeats.includes(computerFigure.figure)) {
-				dispatch(setResult('win'));
+				dispatch(setResult(Outcome.WIN));
 				dispatch(addPoint());
 			} else {
-				dispatch(setResult('loss'));
+				dispatch(setResult(Outcome.LOSS));
 				dispatch(deductPoint());
 			}
 		}
@@ -59,6 +62,7 @@ const GameTurn = () => {
 				className='preview'
 				disabled={true}
 			/>
+			{result === '' ? '' : <Result />}
 			<GameButton
 				figure={computerFigure.figure}
 				className='preview'

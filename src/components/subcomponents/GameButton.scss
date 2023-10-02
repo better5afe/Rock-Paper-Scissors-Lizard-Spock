@@ -284,6 +284,18 @@
 	.preview {
 		position: static;
 		transform: none;
+		height: 230px;
+		width: 230px;
+
+		.game__btn-inside {
+			height: 160px;
+			width: 160px;
+
+			&-figure {
+				height: 70px;
+				width: 70px;
+			}
+		}
 
 		&:hover,
 		&:focus {

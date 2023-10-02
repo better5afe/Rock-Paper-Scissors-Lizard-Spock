@@ -2,4 +2,18 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
+	width: 90vw;
+}
+
+@media (min-width: 576px) {
+	.game-turn {
+		justify-content: space-evenly;
+	}
+}
+
+@media (min-width: 992px) {
+	.game-turn {
+		width: 100%;
+	}
 }
