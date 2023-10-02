@@ -1,19 +1,21 @@
 import ReactDOM from 'react-dom';
 import { useEffect } from 'react';
-import SelectGame from './components/SelectGame';
-import Game from './components/Game';
-import RulesModal from './components/subcomponents/RulesModal';
 import { useSelector, useDispatch } from 'react-redux';
+import { StateInterface } from './models/interfaces';
 import {
 	setStandardPoints,
 	setAdvancedPoints,
 } from './store/actions/points-action';
-import { StateInterface } from './models/interfaces';
 import { getPoints } from './utils/store-points';
+import SelectGame from './components/SelectGame';
+import Game from './components/Game';
+import RulesModal from './components/subcomponents/RulesModal';
 
 const App = () => {
-	const selectedGame = useSelector((state: StateInterface) => state.select);
-	const modal = useSelector((state: StateInterface) => state.modal);
+	const { selectedGame, modal } = useSelector((state: StateInterface) => ({
+		selectedGame: state.select,
+		modal: state.modal,
+	}));
 
 	const dispatch = useDispatch();
 
@@ -30,7 +32,6 @@ const App = () => {
 		if (advancedScore) {
 			dispatch(setAdvancedPoints(+advancedScore));
 		}
-		
 	}, []);
 
 	return (
