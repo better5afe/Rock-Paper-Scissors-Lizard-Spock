@@ -17,6 +17,7 @@ const RulesModal = () => {
 
 	return (
 		<div className='rules'>
+			<div className='rules__backdrop' onClick={closeModalHandler} />
 			<div className='rules__container'>
 				<p className='rules__container-title'>Rules</p>
 				{selectedGame === 'standard' ? (
