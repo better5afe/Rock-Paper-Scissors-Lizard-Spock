@@ -9,7 +9,7 @@ import {
 import { PointsAction } from '../../models/interfaces';
 
 const initialState = {
-	standardPoints: 0,
+	standardPoints: 98,
 	advancedPoints: 0,
 };
 

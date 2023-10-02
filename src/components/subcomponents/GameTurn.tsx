@@ -12,28 +12,49 @@ import {
 	deductPointStandard,
 	deductPointAdvanced,
 } from '../../store/actions/points-action';
-import GameButton from './GameButton';
-import Result from './Result';
 import { awaitResult, gameRules } from '../../utils/game-rules';
 import { storePoints } from '../../utils/store-points';
+import GameButton from './GameButton';
+import Result from './Result';
 
 import './GameTurn.scss';
 
 const GameTurn = () => {
-	const selectedGame = useSelector((state: StateInterface) => state.select);
-
-	const result = useSelector((state: StateInterface) => state.result);
+	const [i, setI] = useState(1);
 
 	const chosenFigure = useSelector((state: StateInterface) => state.figure);
 	const chosenFigureBeats = gameRules[chosenFigure.value - 1].beats as string[];
 
-	const [i, setI] = useState(1);
 	const [computerFigure, setComputerFigure] = useState({
 		figure: chosenFigure.figure,
 		value: chosenFigure.value,
 	});
 
+	const selectedGame = useSelector((state: StateInterface) => state.select);
+
+	const result = useSelector((state: StateInterface) => state.result);
+
 	const dispatch = useDispatch();
+
+	const addStandardPoints = () => {
+		dispatch(addPointStandard());
+		storePoints(SelectedGame.STANDARD, 1);
+	};
+
+	const addAdvancedPoints = () => {
+		dispatch(addPointAdvanced());
+		storePoints(SelectedGame.ADVANCED, 1);
+	};
+
+	const deductStandardPoints = () => {
+		dispatch(deductPointStandard());
+		storePoints(SelectedGame.STANDARD, -1);
+	};
+
+	const deductAdvancedPoints = () => {
+		dispatch(deductPointAdvanced());
+		storePoints(SelectedGame.ADVANCED, -1);
+	};
 
 	useEffect(() => {
 		const timer = setInterval(() => {
@@ -57,22 +78,14 @@ const GameTurn = () => {
 				dispatch(setResult(Outcome.DRAW));
 			} else if (chosenFigureBeats.includes(computerFigure.figure)) {
 				dispatch(setResult(Outcome.WIN));
-				if (selectedGame === SelectedGame.STANDARD) {
-					dispatch(addPointStandard());
-					storePoints(SelectedGame.STANDARD, 1);
-				} else {
-					dispatch(addPointAdvanced());
-					storePoints(SelectedGame.ADVANCED, 1);
-				}
+				selectedGame === SelectedGame.STANDARD
+					? addStandardPoints()
+					: addAdvancedPoints();
 			} else {
 				dispatch(setResult(Outcome.LOSS));
-				if (selectedGame === SelectedGame.STANDARD) {
-					dispatch(deductPointStandard());
-					storePoints(SelectedGame.STANDARD, -1);
-				} else {
-					dispatch(deductPointAdvanced());
-					storePoints(SelectedGame.ADVANCED, -1);
-				}
+				selectedGame === SelectedGame.STANDARD
+					? deductStandardPoints()
+					: deductAdvancedPoints();
 			}
 		}
 	}, [i]);
@@ -84,7 +97,7 @@ const GameTurn = () => {
 				className={`preview ${result !== '' && 'preview--user'}`}
 				disabled={true}
 			/>
-			{result === '' ? '' : <Result />}
+			{result !== '' ? <Result /> : ''}
 			<GameButton
 				figure={computerFigure.figure}
 				className={`preview ${result !== '' && 'preview--computer'}`}

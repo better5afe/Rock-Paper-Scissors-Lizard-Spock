@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { select } from '../store/actions/select-actions';
 import { SelectedGame } from '../models/interfaces';
-import Button from './reusable/Button';
+import Button from './subcomponents/Button';
 
 import './SelectGame.scss';
 
