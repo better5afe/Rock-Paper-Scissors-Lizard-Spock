@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -96,17 +95,23 @@ const GameTurn = () => {
 
 	return (
 		<div className='game-turn'>
-			<GameButton
-				figure={chosenFigure.figure}
-				className={`preview ${result !== '' && 'preview--user'}`}
-				disabled={true}
-			/>
+			<div className='game-turn__box'>
+				<GameButton
+					figure={chosenFigure.figure}
+					className={`preview ${result !== '' && 'preview--user'}`}
+					disabled={true}
+				/>
+				<p className='game-turn__text'>You</p>
+			</div>
 			{result !== '' ? <Result /> : ''}
-			<GameButton
-				figure={computerFigure.figure}
-				className={`preview ${result !== '' && 'preview--computer'}`}
-				disabled={true}
-			/>
+			<div className='game-turn__box'>
+				<GameButton
+					figure={computerFigure.figure}
+					className={`preview ${result !== '' && 'preview--computer'}`}
+					disabled={true}
+				/>
+				<p className='game-turn__text'>The house</p>
+			</div>
 		</div>
 	);
 };

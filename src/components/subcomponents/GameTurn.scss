@@ -1,9 +1,27 @@
+@use '../../assets/colors.scss';
+
 .game-turn {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
 	width: 90vw;
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__text {
+		margin-top: 2em;
+		font-size: 1.6rem;
+		color: colors.$white;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+	}
 }
 
 @media (min-width: 576px) {
@@ -15,5 +33,9 @@
 @media (min-width: 992px) {
 	.game-turn {
 		width: 100%;
+
+		&__text {
+			font-size: 2.5rem;
+		}
 	}
 }
