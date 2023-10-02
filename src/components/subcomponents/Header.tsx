@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector';
-import { StateInterface } from '../../models/interfaces';
-import { SelectedGame } from '../../models/interfaces';
+import { StateInterface, SelectedGame } from '../../models/interfaces';
 import StandardLogo from '../../assets/icons/StandardLogo';
 import AdvancedLogo from '../../assets/icons/AdvancedLogo';
 
