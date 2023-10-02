@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { StateInterface } from '../../models/interfaces';
-import { choseFigure } from '../../store/actions/figure-action';
 import {
+	StateInterface,
 	SelectedGame,
 	Figures,
 	Values,
 	FigurePayload,
 } from '../../models/interfaces';
+import { choseFigure } from '../../store/actions/figure-action';
 import GameButton from '../../components/subcomponents/GameButton';
 import GameTurn from './GameTurn';
 
@@ -16,16 +16,43 @@ const StandardBoard = require('../../assets/images/bg-triangle.png');
 const AdvancedBoard = require('../../assets/images/bg-pentagon.png');
 
 const GameBoard = () => {
-	const selectedGame = useSelector((state: StateInterface) => state.select);
-	const chosenFigure = useSelector(
-		(state: StateInterface) => state.figure.figure
+	const { selectedGame, chosenFigure, result } = useSelector(
+		(state: StateInterface) => ({
+			selectedGame: state.select,
+			chosenFigure: state.figure.figure,
+			result: state.result,
+		})
 	);
-	const result = useSelector((state: StateInterface) => state.result);
 
 	const dispatch = useDispatch();
 
 	const chooseFigureHandler = (payload: FigurePayload) => {
 		dispatch(choseFigure(payload));
+	};
+
+	const buttons = [
+		{ figure: Figures.ROCK, value: Values.ROCK },
+		{ figure: Figures.PAPER, value: Values.PAPER },
+		{ figure: Figures.SCISSORS, value: Values.SCISSORS },
+	];
+
+	if (selectedGame === SelectedGame.ADVANCED) {
+		buttons.push(
+			{ figure: Figures.LIZARD, value: Values.LIZARD },
+			{ figure: Figures.SPOCK, value: Values.SPOCK }
+		);
+	}
+
+	const renderGameButtons = () => {
+		return buttons.map((button) => (
+			<GameButton
+				key={button.figure}
+				figure={button.figure}
+				value={button.value}
+				isAdvanced={selectedGame === SelectedGame.ADVANCED}
+				onClick={() => chooseFigureHandler(button)}
+			/>
+		));
 	};
 
 	return (
@@ -41,64 +68,7 @@ const GameBoard = () => {
 						alt='Game board'
 						className='game-board__img'
 					/>
-					<GameButton
-						figure={Figures.ROCK}
-						value={Values.ROCK}
-						isAdvanced={selectedGame === SelectedGame.ADVANCED && true}
-						onClick={() =>
-							chooseFigureHandler({ figure: Figures.ROCK, value: Values.ROCK })
-						}
-					/>
-					<GameButton
-						figure={Figures.PAPER}
-						value={Values.PAPER}
-						isAdvanced={selectedGame === SelectedGame.ADVANCED && true}
-						onClick={() =>
-							chooseFigureHandler({
-								figure: Figures.PAPER,
-								value: Values.PAPER,
-							})
-						}
-					/>
-					<GameButton
-						figure={Figures.SCISSORS}
-						value={Values.SCISSORS}
-						isAdvanced={selectedGame === SelectedGame.ADVANCED && true}
-						onClick={() =>
-							chooseFigureHandler({
-								figure: Figures.SCISSORS,
-								value: Values.SCISSORS,
-							})
-						}
-					/>
-					{selectedGame === SelectedGame.ADVANCED ? (
-						<>
-							<GameButton
-								figure={Figures.LIZARD}
-								value={Values.LIZARD}
-								isAdvanced={selectedGame === SelectedGame.ADVANCED && true}
-								onClick={() =>
-									chooseFigureHandler({
-										figure: Figures.LIZARD,
-										value: Values.LIZARD,
-									})
-								}
-							/>
-							<GameButton
-								figure={Figures.SPOCK}
-								value={Values.SPOCK}
-								isAdvanced={selectedGame === SelectedGame.ADVANCED && true}
-								onClick={() =>
-									chooseFigureHandler({
-										figure: Figures.SPOCK,
-										value: Values.SPOCK,
-									})
-								}
-							/>
-						</>
-					) : (
-						''
-					)}
+					{renderGameButtons()}
 				</>
 			) : (
 				<GameTurn />

@@ -7,8 +7,10 @@ import AdvancedLogo from '../../assets/icons/AdvancedLogo';
 import './Header.scss';
 
 const Header = () => {
-	const selectedGame = useSelector((state: StateInterface) => state.select);
-	const points = useSelector((state: StateInterface) => state.points);
+	const { selectedGame, points } = useSelector((state: StateInterface) => ({
+		selectedGame: state.select,
+		points: state.points,
+	}));
 
 	return (
 		<header className='header'>

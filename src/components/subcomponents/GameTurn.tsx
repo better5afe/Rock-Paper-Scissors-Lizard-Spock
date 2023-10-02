@@ -20,19 +20,22 @@ import Result from './Result';
 import './GameTurn.scss';
 
 const GameTurn = () => {
-	const [i, setI] = useState(1);
+	const { selectedGame, chosenFigure, result } = useSelector(
+		(state: StateInterface) => ({
+			selectedGame: state.select,
+			chosenFigure: state.figure,
+			result: state.result,
+		})
+	);
 
-	const chosenFigure = useSelector((state: StateInterface) => state.figure);
-	const chosenFigureBeats = gameRules[chosenFigure.value - 1].beats as string[];
+	const [i, setI] = useState(1);
 
 	const [computerFigure, setComputerFigure] = useState({
 		figure: chosenFigure.figure,
 		value: chosenFigure.value,
 	});
 
-	const selectedGame = useSelector((state: StateInterface) => state.select);
-
-	const result = useSelector((state: StateInterface) => state.result);
+	const chosenFigureBeats = gameRules[chosenFigure.value - 1].beats as string[];
 
 	const dispatch = useDispatch();
 

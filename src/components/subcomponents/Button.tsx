@@ -1,4 +1,5 @@
 import { ButtonProps } from '../../models/interfaces';
+
 import './Button.scss';
 
 const Button: React.FC<ButtonProps> = ({ text, className, value, onClick }) => {

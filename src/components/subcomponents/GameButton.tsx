@@ -1,4 +1,5 @@
 import { GameButtonProps } from '../../models/interfaces';
+
 import './GameButton.scss';
 
 const GameButton: React.FC<GameButtonProps> = ({
