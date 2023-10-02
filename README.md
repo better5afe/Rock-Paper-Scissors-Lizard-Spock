@@ -37,14 +37,6 @@ Mobile game board (advanced difficulty):
 
 ![](./screenshots/Mobile__Board--advanced.png)
 
-Mobile rules modal (standard difficulty):
-
-![](./screenshots/Mobile__Modal--standard.png)
-
-Mobile rules modal (advanced difficulty):
-
-![](./screenshots/Mobile__Modal--advanced.png)
-
 Mobile result screen:
 ![](./screenshots/Desktop__Result.png)
 
@@ -59,14 +51,6 @@ Desktop game board (standard difficulty):
 Desktop game board (advanced difficulty):
 
 ![](./screenshots/Desktop__Board--advanced.png)
-
-Desktop rules modal (standard difficulty):
-
-![](./screenshots/Desktop__Modal--standard.png)
-
-Desktop rules modal (advanced difficulty):
-
-![](./screenshots/Desktop__Modal--advanced.png)
 
 Desktop result screen:
 ![](./screenshots/Desktop__Result.png)
