@@ -37,7 +37,10 @@ export interface StateInterface {
 	select: string;
 	modal: boolean;
 	figure: FigurePayload;
-	points: number;
+	points: {
+		standardPoints: number;
+		advancedPoints: number;
+	};
 	result: string;
 }
 

@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { StateInterface } from '../../models/interfaces';
+import { SelectedGame } from '../../models/interfaces';
 import StandardLogo from '../../assets/icons/StandardLogo';
 import AdvancedLogo from '../../assets/icons/AdvancedLogo';
 
@@ -16,7 +17,11 @@ const Header = () => {
 			</div>
 			<div className='header__score'>
 				<p className='header__score-title'>Score</p>
-				<p className='header__score-points'>{points}</p>
+				<p className='header__score-points'>
+					{selectedGame === SelectedGame.STANDARD
+						? points.standardPoints
+						: points.advancedPoints}
+				</p>
 			</div>
 		</header>
 	);

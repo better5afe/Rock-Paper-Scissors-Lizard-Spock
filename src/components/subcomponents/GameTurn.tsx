@@ -1,8 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { StateInterface, Result as Outcome } from '../../models/interfaces';
+import {
+	StateInterface,
+	Result as Outcome,
+	SelectedGame,
+} from '../../models/interfaces';
 import { setResult } from '../../store/actions/result-action';
-import { addPoint, deductPoint } from '../../store/actions/points-action';
+import {
+	addPointStandard,
+	addPointAdvanced,
+	deductPointStandard,
+	deductPointAdvanced,
+} from '../../store/actions/points-action';
 import GameButton from './GameButton';
 import Result from './Result';
 import { awaitResult, gameRules } from '../../utils/game-rules';
@@ -47,10 +56,18 @@ const GameTurn = () => {
 				dispatch(setResult(Outcome.DRAW));
 			} else if (chosenFigureBeats.includes(computerFigure.figure)) {
 				dispatch(setResult(Outcome.WIN));
-				dispatch(addPoint());
+				if (selectedGame === SelectedGame.STANDARD) {
+					dispatch(addPointStandard());
+				} else {
+					dispatch(addPointAdvanced());
+				}
 			} else {
 				dispatch(setResult(Outcome.LOSS));
-				dispatch(deductPoint());
+				if (selectedGame === SelectedGame.STANDARD) {
+					dispatch(deductPointStandard());
+				} else {
+					dispatch(deductPointAdvanced());
+				}
 			}
 		}
 	}, [i]);
