@@ -9,6 +9,7 @@
 	transform: translateY(-20%);
 	opacity: 0;
 	animation: animations.$slide-in;
+	animation-duration: 1s;
 
 	&__text {
 		font-size: 4.5rem;
