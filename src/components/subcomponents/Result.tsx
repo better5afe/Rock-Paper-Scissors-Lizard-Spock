@@ -13,13 +13,9 @@ const Result = () => {
 	let turnResult;
 
 	if (result !== '') {
-		if (result === Outcome.DRAW) {
-			turnResult = `It's a draw`;
-		} else if (result === Outcome.WIN) {
-			turnResult = 'You win';
-		} else {
-			turnResult = 'You lose';
-		}
+		result === Outcome.DRAW && (turnResult = `It's a draw`)
+		result === Outcome.WIN && (turnResult = 'You win')
+		result === Outcome.LOSS && (turnResult = 'You lose')
 	}
 
 	const playAgainHandler = () => {
