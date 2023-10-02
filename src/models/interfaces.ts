@@ -28,6 +28,11 @@ export interface FigurePayload {
 	value: number;
 }
 
+export interface PointsAction {
+	type: string;
+	payload?: number;
+}
+
 export interface FigureActionInterface {
 	type: string;
 	payload: FigurePayload;

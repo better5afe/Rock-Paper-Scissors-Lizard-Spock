@@ -15,6 +15,7 @@ import {
 import GameButton from './GameButton';
 import Result from './Result';
 import { awaitResult, gameRules } from '../../utils/game-rules';
+import { storePoints } from '../../utils/store-points';
 
 import './GameTurn.scss';
 
@@ -58,15 +59,19 @@ const GameTurn = () => {
 				dispatch(setResult(Outcome.WIN));
 				if (selectedGame === SelectedGame.STANDARD) {
 					dispatch(addPointStandard());
+					storePoints(SelectedGame.STANDARD, 1);
 				} else {
 					dispatch(addPointAdvanced());
+					storePoints(SelectedGame.ADVANCED, 1);
 				}
 			} else {
 				dispatch(setResult(Outcome.LOSS));
 				if (selectedGame === SelectedGame.STANDARD) {
 					dispatch(deductPointStandard());
+					storePoints(SelectedGame.STANDARD, -1);
 				} else {
 					dispatch(deductPointAdvanced());
+					storePoints(SelectedGame.ADVANCED, -1);
 				}
 			}
 		}
