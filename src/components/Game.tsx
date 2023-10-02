@@ -1,10 +1,10 @@
-import Header from './subcomponents/Header';
-import GameBoard from './subcomponents/GameBoard';
-import Button from './subcomponents/Button';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { StateInterface } from '../models/interfaces';
 import { openModal } from '../store/actions/modal-actions';
 import { reset } from '../store/actions/select-actions';
+import Header from './subcomponents/Header';
+import GameBoard from './subcomponents/GameBoard';
+import Button from './subcomponents/Button';
 
 import './Game.scss';
 

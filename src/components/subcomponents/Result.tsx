@@ -3,6 +3,7 @@ import { resetResult } from '../../store/actions/result-action';
 import { resetFigure } from '../../store/actions/figure-action';
 import { StateInterface, Result as Outcome } from '../../models/interfaces';
 import Button from './Button';
+
 import './Result.scss';
 
 const Result = () => {

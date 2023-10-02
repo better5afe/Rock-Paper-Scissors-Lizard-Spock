@@ -3,6 +3,7 @@ import { StateInterface } from '../../models/interfaces';
 import { closeModal } from '../../store/actions/modal-actions';
 import StandardRules from '../../assets/icons/StandardRules';
 import AdvancedRules from '../../assets/icons/AdvancedRules';
+
 import './RulesModal.scss';
 
 const RulesModal = () => {
