@@ -17,11 +17,13 @@ const SelectGame = () => {
 		<div className='select-box'>
 			<Button
 				text='Standard Game'
+				className='top'
 				value={SelectedGame.STANDARD}
 				onClick={selectGameHandler}
 			/>
 			<Button
 				text='Advanced Game'
+				className='bottom'
 				value='advanced'
 				onClick={selectGameHandler}
 			/>

@@ -10,7 +10,7 @@ const Result = () => {
 
 	const dispatch = useDispatch();
 
-	let turnResult
+	let turnResult;
 
 	if (result !== '') {
 		if (result === Outcome.DRAW) {
@@ -28,14 +28,16 @@ const Result = () => {
 	};
 
 	return (
-		<div className='result'>
-			<p className='result__text'>{turnResult}</p>
-			<Button
-				text='play again'
-				className='play-again'
-				onClick={playAgainHandler}
-			/>
-		</div>
+		
+			<div className='result'>
+				<p className='result__text'>{turnResult}</p>
+				<Button
+					text='play again'
+					className='play-again'
+					onClick={playAgainHandler}
+				/>
+			</div>
+		
 	);
 };
 

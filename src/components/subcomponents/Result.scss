@@ -1,10 +1,14 @@
 @use '../../assets/colors.scss';
+@use '../../assets/animations.scss';
 
 .result {
 	order: 1;
 	width: 100%;
 	margin: 3em auto;
 	text-align: center;
+	transform: translateY(-20%);
+	opacity: 0;
+	animation: animations.$slide-in;
 
 	&__text {
 		font-size: 4.5rem;

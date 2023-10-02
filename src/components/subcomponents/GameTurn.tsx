@@ -59,13 +59,13 @@ const GameTurn = () => {
 		<div className='game-turn'>
 			<GameButton
 				figure={chosenFigure.figure}
-				className='preview'
+				className={`preview ${result !== '' && 'preview--user'}`}
 				disabled={true}
 			/>
 			{result === '' ? '' : <Result />}
 			<GameButton
 				figure={computerFigure.figure}
-				className='preview'
+				className={`preview ${result !== '' && 'preview--computer'}`}
 				disabled={true}
 			/>
 		</div>
