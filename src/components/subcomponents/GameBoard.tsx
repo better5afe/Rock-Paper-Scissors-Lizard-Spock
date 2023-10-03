@@ -8,7 +8,6 @@ import {
 } from '../../models/interfaces';
 import { choseFigure } from '../../store/actions/figure-action';
 import GameButton from '../../components/subcomponents/GameButton';
-import GameTurn from './GameTurn';
 
 import './GameBoard.scss';
 
@@ -16,10 +15,9 @@ const StandardBoard = require('../../assets/images/bg-triangle.png');
 const AdvancedBoard = require('../../assets/images/bg-pentagon.png');
 
 const GameBoard = () => {
-	const { selectedGame, chosenFigure, result } = useSelector(
+	const { selectedGame, result } = useSelector(
 		(state: StateInterface) => ({
 			selectedGame: state.select,
-			chosenFigure: state.figure.figure,
 			result: state.result,
 		})
 	);
@@ -57,22 +55,14 @@ const GameBoard = () => {
 
 	return (
 		<div className={`game-board ${result !== '' && 'game-board--result'}`}>
-			{chosenFigure === '' ? (
-				<>
-					<img
-						src={
-							selectedGame === SelectedGame.STANDARD
-								? StandardBoard
-								: AdvancedBoard
-						}
-						alt='Game board'
-						className='game-board__img'
-					/>
-					{renderGameButtons()}
-				</>
-			) : (
-				<GameTurn />
-			)}
+			<img
+				src={
+					selectedGame === SelectedGame.STANDARD ? StandardBoard : AdvancedBoard
+				}
+				alt='Game board'
+				className='game-board__img'
+			/>
+			{renderGameButtons()}
 		</div>
 	);
 };

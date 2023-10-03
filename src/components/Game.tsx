@@ -4,6 +4,7 @@ import { openModal } from '../store/actions/modal-actions';
 import { reset } from '../store/actions/select-actions';
 import Header from './subcomponents/Header';
 import GameBoard from './subcomponents/GameBoard';
+import GameTurn from './subcomponents/GameTurn';
 import Button from './subcomponents/Button';
 
 import './Game.scss';
@@ -26,7 +27,7 @@ const Game = () => {
 	return (
 		<main className='main'>
 			<Header />
-			<GameBoard />
+			{chosenFigure === '' ? <GameBoard /> : <GameTurn />}
 			<Button className='rules' text='rules' onClick={openModalHandler} />
 			{chosenFigure === '' && (
 				<Button
